@@ -1,0 +1,94 @@
+############################
+# snippet for lilypond #
+############################
+
+snippet brr Break staff
+  \break
+
+snippet doblebar Doble bar
+  \bar "||"
+
+snippet endbar End bar
+  \bar "|."
+
+snippet flvn Fl. Vn.
+  ^\markup { \left-column { \line {Fl. } \line { Vn. } } }
+
+snippet vnfl Vn. Fl.
+  ^\markup { \left-column { \line {Fl. } \line { Vn. } } }
+
+snippet dacapo Da Capo
+  ^\markup { \raise #2 { D.C. }}
+# ^\markup { \bold \raise #2 { D.C. }}
+
+snippet segno Segno
+  \mark \markup { \musicglyph "scripts.segno" }
+
+snippet asegno Go to Segno
+  ^\markup {
+       \tiny \raise #0
+       \italic "a"
+       \musicglyph "scripts.segno"
+     }
+
+snippet rrrr Repeat without Alternatives
+  \repeat volta 2 {
+      ${1}
+  }
+
+snippet rraa Repeat with Two Alternative
+  \repeat volta 2 {
+      ${1}
+  }
+  \alternative {
+     {
+      ${2}
+     }
+     {
+      ${3}
+     }
+   }
+
+snippet vv Two Voices structure
+  <<
+    {
+      ${1}
+    }
+    \\\\
+    {
+      ${2}
+    }
+  >>
+
+snippet ggg Grace
+  \\grace { ${1} } ${2}
+
+snippet tt32 Write Tuplet 3/2
+  \\tuplet 3/2 { ${1} } ${2}
+
+snippet ttt Write Tuplet
+  \\tuplet ${1}/${2} { ${3} }
+
+snippet mmm Put Measure number
+  % mes.${1}
+
+snippet css Corchea 2 semicorcheas
+  ${1}8 ${2}16 ${3}
+
+snippet a21 Acorde de 2 notas x 1
+  <${1} ${2}>${3}
+
+snippet a22 Acorde de 2 notas x 2
+  <${1} ${2}>${3} <${4} ${5}>${6}
+
+snippet a23 Acorde de 2 notas x 3
+  <${1} ${2}>${3} <${4} ${5}>${6} <${7} ${8}>${9}
+
+snippet a24 Acorde de 2 notas x 4
+  <${1} ${2}>${3} <${4} ${5}>${6} <${7} ${8}>${9} <${10} ${11}>${12}
+
+snippet a25 Acorde de 2 notas x 5
+  <${1} ${2}>${3} <${4} ${5}>${6} <${7} ${8}>${9} <${10} ${11}>${12} <${13} ${14}>${15}
+
+snippet a26 Acorde de 2 notas x 6
+  <${1} ${2}>${3} <${4} ${5}>${6} <${7} ${8}>${9} <${10} ${11}>${12} <${13} ${14}>${15} <${16} ${17}>${18}

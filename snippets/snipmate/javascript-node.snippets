@@ -1,0 +1,117 @@
+extends javascriptreact
+
+snippet #! shebang
+	#!/usr/bin/env node
+
+snippet vreq assign a CommonJS-style module to a var
+	var ${0:${1/(.+\/)*(\w+)(-|\b|$)(\..+$)?/\u$2/g}} = require('$1');
+
+snippet ex module.exports
+	module.exports = $1;
+
+snippet hcs http.createServer
+	http.createServer($1).listen($2);
+
+snippet ncs net.createServer
+	net.createServer(function(${1:socket}){
+		$1.on('data', function(${3:data}){
+			$4
+		});
+		$1.on('end', function(){
+			$5
+		});
+	}).listen(${6:8124});
+
+snippet pipe pipe
+	pipe(${1:stream})$2
+
+# Express snippets
+
+snippet eget express GET
+	${1:app}.get('$2', $3);
+
+snippet epost express POST
+	${1:app}.post('$2', $3);
+
+snippet eput express PUT
+	${1:app}.put('$2', $3);
+
+snippet edelete express DELETE
+	${1:app}.delete('$2', $3);
+
+# process snippets
+
+snippet stdout stdout
+	process.stdout
+
+snippet stdin stdin
+	process.stdin
+
+snippet stderr stderr
+	process.stderr
+
+snippet reqq Require library
+  const $1 = require('$1');
+
+snippet importt Import package from ..
+  import $1 from '$1';
+
+snippet ttcc Try - Catch
+  try {
+    $1
+  } catch (error) {
+    $2
+  }
+
+snippet ife "if (cond) { ... } else { ... }"
+  if (${1}) {
+    ${0:${VISUAL}}
+  } else {
+    ${2}
+  }
+
+snippet thencatch "then catch after find or save in mongoose"
+  .then(($1) => {
+      if (!$1) {
+          return res.status(400).json({
+              status: 'error',
+              message: 'Missing data to send'
+          });
+  }
+           // return response
+      return res.status(200).json({
+          status: 'success',
+          message: '$2'
+      })
+  }).catch((err) => {
+      return res.status(500).send({
+          status: 'error',
+          message: \`Error \${err\}\`
+      });
+  })
+
+snippet mwc Method with callback function as parameter
+  .${1:save}($2, (error, $3) => {
+      if (error || !$3) {
+          return res.status(400).json({
+              status: 'error',
+              message: 'No results found',
+              error
+          });
+  }
+      return res.status(200).json({
+          status: 'success',
+          $3
+      })
+  });
+
+snippet conmet Controller Method
+ const $1 = (req, res) => {
+     $2
+ }
+
+snippet vv "Variable and his value"
+  let ${1} = ${2};
+
+snippet cc "Constant and his value"
+  const ${1} = ${2};

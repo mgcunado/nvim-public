@@ -1,0 +1,18 @@
+snippet link Link to something
+    [${1:label}]($2)
+
+snippet img Image ib
+    ![${1:name}](img/$1.png)
+
+snippet imghtml image in html
+
+    <img src="img/$1.jpg" width="400px"/>
+
+# filament
+snippet filament_make_page_custom
+    php artisan make:filament-page View${1:Model} --resource=$1Resource --type=custom
+    'view' => Pages\View$1::route('/{record}'),
+
+snippet filament_make_widget
+    pa make:filament-widget ${1:Mode}Cobros --table
+

@@ -1,0 +1,103 @@
+############################################################
+#  Custom  #
+############################################################
+
+snippet out outline all elements
+  * {
+    outline: 1px solid lightgray;
+  }
+
+snippet bb Border bottom
+  border-bottom: 1px solid $0;
+
+snippet trans Transition
+  transition: ${1:opacity} ${2:100}ms ${3:linear};
+
+snippet media media query
+  @media(${1:min}-width: ${2:375}px){
+    $0
+  }
+
+# tailwind
+
+snippet tailwind_init
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+snippet twmd Tailwind md
+  @screen md {
+    $0
+  }
+
+snippet twlg Tailwind lg
+  @screen lg {
+    $0
+  }
+
+snippet twxl Tailwind xl
+  @screen xl {
+    $0
+  }
+
+snippet twxxl Tailwind xxl
+  @screen xxl {
+    $0
+  }
+
+snippet pseudo Pseudo element
+  .$1 {
+    position: relative;
+  }
+  .$1::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: ;
+    height: ;
+    background-color: ;
+  }
+
+snippet imgurl Postcss Tailwind image url in dist folder
+  url('../images/${1:image.png}');
+
+snippet grid Grid
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+
+snippet lh line height
+  line-height: 1$0;
+
+snippet flex Flex
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+
+snippet contain Contain
+  max-width:$1;
+  margin-left: auto;
+  margin-right:auto;
+
+snippet mlr Margin left, right
+  margin-left: ${1:auto};
+  margin-right: ${2:auto};
+
+snippet tt Text transform
+  text-transform: ${1:uppercase};
+
+snippet bgi Background image
+  background-image: url(../images/$1);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+snippet dummy dummy classes
+  .dummy, .dummy * { outline: 1px dashed red; }
+
+snippet ipp Input type to css
+  input[type="${1:text}"]
